@@ -54,7 +54,7 @@ const Home: NextPage = ({ radios }: any) => {
 
 Home.getInitialProps = async () => {
   try {
-    const res = await axios.get('http://localhost:4000/radios');
+    const res = await axios.get('https://nestradio.herokuapp.com/radios');
     const radios: Radios[] = res.data;
     return { radios };
   } catch (error) {
