@@ -3,7 +3,8 @@ import Image from 'next/image'
 import axios from 'axios';
 
 
-interface Props {
+
+interface Size {
   width: number,
   height: number,
 }
@@ -14,9 +15,9 @@ interface Radios {
   url_img: string,
 }
 
-const props: Props = {
+const size: Size = {
   width: 250,
-  height: 250
+  height: 250,
 }
 
 const Home: NextPage = ({ radios }: any) => {
@@ -37,8 +38,8 @@ const Home: NextPage = ({ radios }: any) => {
                   src={url_img}
                   alt={name}
                   className="card-img-top"
-                  width={props.width}
-                  height={props.height}
+                  width={size.width}
+                  height={size.height}
                 />
                 <h5 className="card-title text-center">{name}</h5>
                 <audio controls src={url_flux}></audio>
@@ -54,7 +55,7 @@ const Home: NextPage = ({ radios }: any) => {
 
 Home.getInitialProps = async () => {
   try {
-    const res = await axios.get('https://nestradio.herokuapp.com/radios');
+    const res = await axios.get(process.env.URL_API + '/radios');
     const radios: Radios[] = res.data;
     return { radios };
   } catch (error) {
@@ -63,3 +64,4 @@ Home.getInitialProps = async () => {
 };
 
 export default Home
+
