@@ -20,13 +20,16 @@ const props: Props = {
 }
 
 const Home: NextPage = ({ radios }: any) => {
+  if (radios === undefined) {
+    radios = []
+  }
   return (<>
     <br />
     <h1 className='text-center'>Radios</h1>
     <br />
     <div className="container">
       <div className="row">
-        {radios.map(({ name, url_flux, url_img }: any) => {
+        {radios.map(({ name, url_flux, url_img }: Radios) => {
           return (<>
             <div className="col">
               <div className="card">
