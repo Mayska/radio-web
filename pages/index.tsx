@@ -16,8 +16,8 @@ interface Radios {
 }
 
 const size: Size = {
-  width: 250,
-  height: 250,
+  width: 150,
+  height: 150,
 }
 
 const Home: NextPage = ({ radios }: any) => {
@@ -29,7 +29,7 @@ const Home: NextPage = ({ radios }: any) => {
     <h1 className='text-center'>Radios</h1>
     <br />
     <div className="container">
-      <div className="row">
+      <div className="row row-cols-1 row-cols-md-4 g-4">
         {radios.map(({ name, url_flux, url_img }: Radios) => {
           return (<>
             <div className="col">
