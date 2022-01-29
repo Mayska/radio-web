@@ -10,6 +10,7 @@ interface Size {
 }
 
 interface Radios {
+  id: string,
   name: string,
   url_flux: string,
   url_img: string,
@@ -30,7 +31,7 @@ const Home: NextPage = ({ radios }: any) => {
     <br />
     <div className="container">
       <div className="row row-cols-1 row-cols-md-4 g-4">
-        {radios.map(({ name, url_flux, url_img }: Radios) => {
+        {radios.map(({ id, name, url_flux, url_img }: Radios) => {
           return (<>
             <div className="col">
               <div className="card">
@@ -42,7 +43,7 @@ const Home: NextPage = ({ radios }: any) => {
                   height={size.height}
                 />
                 <h5 className="card-title text-center">{name}</h5>
-                <audio controls src={url_flux}></audio>
+                <audio id={id} controls src={url_flux}></audio>
               </div>
             </div>
             <br />
@@ -64,4 +65,3 @@ Home.getInitialProps = async () => {
 };
 
 export default Home
-
