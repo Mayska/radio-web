@@ -14,18 +14,12 @@ export async function getStaticProps() {
     //const resCategory: Response = await fetch(process.env.URL_API + '/home/category')
     //const allCategory: any = await resCategory.json()
     // ! Rustine bis
-    const allCategory: any = [
-        { category: 'home' },
-        { category: 'tv' },
-        { category: 'favoris' },
-        { category: 'utilitaires' }
-    ]
     return {
         props: {
             url_api: URL_API,
             img: IMG,
             home: null,
-            allCategory
+            allCategory: null
         },
     }
 };

@@ -13,6 +13,20 @@ function FormsHome({ children }: any) {
     const value: any = children.home
     const URL_API: any = children.url_api
     const IMG: any = children.img
+    let allCategory: any[] = []
+
+    if (children.allCategory === null) {
+        allCategory = [
+            { category: 'home' },
+            { category: 'tv' },
+            { category: 'favoris' },
+            { category: 'utilitaires' }
+        ]
+    } else {
+        children.allCategory.map((e: any) => {
+            allCategory.push(e)
+        })
+    }
     const router = useRouter()
     const registerNewHome = async (event: any) => {
         event.preventDefault()
@@ -84,7 +98,7 @@ function FormsHome({ children }: any) {
                     <div className="mb-3">
                         <label htmlFor="category" className="form-label">Category</label>
                         <select id="category" name="category" className="form-select" aria-label="Default select example">
-                            {children.allCategory.map((e: any) => {
+                            {allCategory.map((e: any) => {
                                 return (<>
                                     {value === null ?
                                         <option value={e.category}>{e.category}</option> :
