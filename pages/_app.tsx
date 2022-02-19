@@ -1,5 +1,7 @@
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
+import Footer from '../components/footer'
+import Layout from '../components/layout'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (<>
@@ -19,7 +21,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossOrigin="anonymous"></script>
     </Head>
-    <Component {...pageProps} />
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
   </>)
 }
 
