@@ -13,7 +13,7 @@ export async function getStaticProps() {
     const IMG: any = process.env.IMG
     //const resCategory: Response = await fetch(process.env.URL_API + '/home/category')
     //const allCategory: any = await resCategory.json()
-    // ! Rustine
+    // ! Rustine bis
     const allCategory: any = [
         { category: 'home' },
         { category: 'tv' },
