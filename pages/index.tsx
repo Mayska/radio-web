@@ -4,22 +4,21 @@ import { MyHome } from '../interfaces/myhome'
 
 function Index(props: any) {
   return (<>
-    <p>{props.error}</p>
-    <Home>{props}</Home>
+    <h1>test</h1>
+    {/*<Home>{props}</Home>*/}
   </>)
 }
 
+
+export default Index
+
 export async function getStaticProps() {
   const res: Response = await fetch(process.env.URL_API + '/home/category/home')
-  let error: string = ""
-  error = "Etat de la requete => " + res.status
+  console.log(res)
   const home: MyHome[] = await res.json()
   return {
     props: {
-      home,
-      error
+      home
     },
   }
 };
-
-export default Index
