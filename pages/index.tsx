@@ -4,8 +4,8 @@ import { MyHome } from '../interfaces/myhome'
 
 function Index(props: any) {
   return (<>
-    <h1>test</h1>
-    {/*<Home>{props}</Home>*/}
+    <h1>Ajout Home</h1>
+    <Home>{props}</Home>
   </>)
 }
 
