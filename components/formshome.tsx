@@ -10,6 +10,7 @@ const size: Size = {
 }
 
 function FormsHome({ children }: any) {
+
     const value: any = children.home
     const URL_API: any = children.url_api
     const IMG: any = children.img
@@ -75,26 +76,11 @@ function FormsHome({ children }: any) {
                             <input id="name" name="name" className="form-control form-control-lg" type="text" required /> :
                             <input id="name" name="name" className="form-control form-control-lg" defaultValue={value.name} type="text" required />}
                     </div>
-                    {/*<div className="mb-3">
+                    <div className="mb-3">
                         <label htmlFor="category" className="form-label">Category</label>
                         {value === null ?
                             <input id="category" name="category" className="form-control form-control-lg" type="text" autoComplete="category" required /> :
                             <input id="category" name="category" className="form-control form-control-lg" defaultValue={value.category} type="text" autoComplete="category" required />}
-                        </div>*/}
-                    <div className="mb-3">
-                        <label htmlFor="category" className="form-label">Category</label>
-                        <select id="category" name="category" className="form-select" aria-label="Default select example">
-                            {children.allCategory.map((e: any) => {
-                                return (<>
-                                    {value === null ?
-                                        <option value={e.category}>{e.category}</option> :
-                                        e.category === value.category ?
-                                            <option value={e.category} selected>{e.category}</option> :
-                                            <option value={e.category} >{e.category}</option>
-                                    }
-                                </>)
-                            })}
-                        </select>
                     </div>
                     <div className="mb-3">
                         <label htmlFor="url" className="form-label">Url</label>
@@ -110,7 +96,7 @@ function FormsHome({ children }: any) {
                     </div>
                     {value === null ? "" :
                         <div className="mb-3">
-                            <label htmlFor="actif" className="form-label">Etat</label>
+                            <label htmlFor="actif" className="form-label">Actif</label>
                             {value === null ?
                                 ""
                                 :
@@ -118,7 +104,7 @@ function FormsHome({ children }: any) {
                                     {value.actif === true ?
                                         <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" defaultChecked></input> :
                                         <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" />}
-                                    <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Actif</label>
+                                    <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Default switch checkbox input</label>
                                 </div>}
 
                         </div>
