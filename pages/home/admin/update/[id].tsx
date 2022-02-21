@@ -14,14 +14,11 @@ export async function getStaticProps({ params }: any) {
         method: 'get'
     })
     const home: MyHome = await res.json()
-    const resCategory: Response = await fetch(process.env.URL_API + '/home/category')
-    const allCategory: any = await resCategory.json()
     return {
         props: {
             url_api: URL_API,
             img: IMG,
             home,
-            allCategory
         },
     }
 }
