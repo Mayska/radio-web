@@ -31,7 +31,9 @@ export async function getStaticProps({ params }: any) {
 }
 
 export async function getStaticPaths() {
-    const res: Response = await fetch(process.env.URL_API + '/home')
+    const res: Response = await fetch(process.env.URL_API + '/home', {
+        method: "GET"
+    })
     const home: MyHome[] = await res.json()
     return {
         paths: home.map(h => ({
