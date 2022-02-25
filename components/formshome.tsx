@@ -17,36 +17,35 @@ function FormsHome({ children }: any) {
     const router = useRouter()
     const registerNewHome = async (event: any) => {
         event.preventDefault()
-        /*  if (value != null) {*/
-        const URL_PATCH = URL_API + "/home/" + value.id
-        await fetch(URL_PATCH, {
-            body: JSON.stringify({
-                name: event.target.name.value,
-                category: event.target.category.value,
-                url: event.target.url.value,
-                url_img: event.target.url_img.value,
-                actif: event.target.flexSwitchCheckDefault.checked,
-            }),
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            method: 'PATCH'
-        })
-        //} 
-        /*else { 
-      await fetch(URL_API + "/home", {
-          body: JSON.stringify({
-              name: event.target.name.value,
-              category: event.target.category.value,
-              url: event.target.url.value,
-              url_img: event.target.url_img.value,
-          }),
-          headers: {
-              'Content-Type': 'application/json'
-          },
-          method: 'POST'
-      })
-      // }*/
+        if (value != null) {
+            const URL_PATCH = URL_API + "/home/" + value.id
+            await fetch(URL_PATCH, {
+                body: JSON.stringify({
+                    name: event.target.name.value,
+                    category: event.target.category.value,
+                    url: event.target.url.value,
+                    url_img: event.target.url_img.value,
+                    actif: event.target.flexSwitchCheckDefault.checked,
+                }),
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                method: 'PATCH'
+            })
+        } else {
+            await fetch(URL_API + "/home", {
+                body: JSON.stringify({
+                    name: event.target.name.value,
+                    category: event.target.category.value,
+                    url: event.target.url.value,
+                    url_img: event.target.url_img.value,
+                }),
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                method: 'POST'
+            })
+        }
         router.push('/home/admin')
     }
     return (<>
