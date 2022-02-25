@@ -7,7 +7,7 @@ function Update(props: MyHome) {
     </>)
 }
 
-export async function getStaticProps({ params }: any) {
+export async function getServerSideProps({ params }: any) {
     const URL_API: any = process.env.URL_API
     const IMG: any = process.env.IMG
     const res: Response = await fetch(process.env.URL_API + '/home/' + params.id, {
@@ -20,17 +20,6 @@ export async function getStaticProps({ params }: any) {
             img: IMG,
             home,
         },
-    }
-}
-
-export async function getStaticPaths() {
-    const res: Response = await fetch(process.env.URL_API + '/home')
-    const home: MyHome[] = await res.json()
-    return {
-        paths: home.map(h => ({
-            params: { id: h.id.toString() }
-        })),
-        fallback: false
     }
 }
 
