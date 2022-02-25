@@ -4,7 +4,6 @@ import { MyHome } from '../interfaces/myhome'
 
 
 function Index(props: any) {
-  console.log(props.home)
   return (<>
     <Home>{props}</Home>
   </>)
@@ -14,7 +13,6 @@ function Index(props: any) {
 
 export async function getStaticProps() {
   const res: Response = await fetch("https://nestradio.herokuapp.com" + '/home/category/home')
-  console.log(res)
   const home: MyHome[] = await res.json()
   return {
     props: {

@@ -12,11 +12,11 @@ function Index(props: any) {
 }
 
 export async function getStaticProps() {
-    const resHome: Response = await fetch(process.env.URL_API + '/home')
+    const resHome: Response = await fetch("https://nestradio.herokuapp.com" + '/home')
     const home: MyHome[] = await resHome.json()
     return {
         props: {
-            home,
+            home: home
         },
     }
 };
