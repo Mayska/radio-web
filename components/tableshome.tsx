@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { Router, useRouter } from 'next/router'
 import { MyHome } from '../interfaces/myhome'
 import { Size } from '../interfaces/size'
 
@@ -8,7 +9,17 @@ const size: Size = {
     height: 50,
 }
 
+
 function TablesHome({ children }: any) {
+    const router = useRouter()
+    const deleteItems = async (event: any) => {
+        event.preventDefault()
+        await fetch("https://nestradio.herokuapp.com" + '/home/' + event.target.id.id, {
+            method: 'delete'
+        })
+        router.push('/home/admin')
+    }
+
     let i: number = 1
     return (<>
         <Link href='/home/admin/add'>
@@ -67,12 +78,9 @@ function TablesHome({ children }: any) {
                                 <a className="btn btn-warning" aria-current="page">Modifier</a>
                             </Link>
                                 <span> | </span>
-                                <Link href={{
-                                    pathname: '/home/admin/delete/[id]',
-                                    query: { id: id },
-                                }}>
-                                    <a className="btn btn-danger" aria-current="page">Supprimer</a>
-                                </Link>
+                                <form onSubmit={deleteItems}>
+                                    <button id={id} name="id" className="btn btn-danger" aria-current="page" type="submit">Supprimer</button>
+                                </form>
                             </td>
                         </tr>
                     </>)
