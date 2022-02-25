@@ -11,12 +11,11 @@ const size: Size = {
 
 
 function TablesHome({ children }: any) {
-    const router = useRouter()
     async function deleteItems(id: any) {
         await fetch("https://nestradio.herokuapp.com" + '/home/' + id, {
             method: 'delete'
         })
-        window.location.href = "/home/admin"
+        return window.location.href = "/home/admin"
     }
 
     let i: number = 1
