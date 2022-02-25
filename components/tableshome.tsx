@@ -12,12 +12,11 @@ const size: Size = {
 
 function TablesHome({ children }: any) {
     const router = useRouter()
-    const deleteItems = async (event: any) => {
-        event.preventDefault()
-        await fetch("https://nestradio.herokuapp.com" + '/home/' + event.target.id.id, {
+    async function deleteItems(id: any) {
+        await fetch("https://nestradio.herokuapp.com" + '/home/' + id, {
             method: 'delete'
         })
-        router.push('/home/admin')
+        window.location.href = "/home/admin"
     }
 
     let i: number = 1
@@ -78,9 +77,7 @@ function TablesHome({ children }: any) {
                                 <a className="btn btn-warning" aria-current="page">Modifier</a>
                             </Link>
                                 <span> | </span>
-                                <form onSubmit={deleteItems}>
-                                    <button id={id} name="id" className="btn btn-danger" aria-current="page" type="submit">Supprimer</button>
-                                </form>
+                                <button className="btn btn-danger" aria-current="page" onClick={() => deleteItems(id)} >Supprimer</button>
                             </td>
                         </tr>
                     </>)
