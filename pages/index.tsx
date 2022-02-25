@@ -1,17 +1,22 @@
+import axios from "axios"
 import Home from "../components/home"
 import { MyHome } from '../interfaces/myhome'
 
 
-function Index(props: any) {
+function Index() {
+  const home: any = axios.get("https://nestradio.herokuapp.com" + '/home/category/home')
+    .catch(error => console.log(error))
+  console.log(home)
   return (<>
-    <h1>Ajout Home</h1>
-    <Home>{props}</Home>
+    <h1>CUOCUCOUC</h1>
+    {/*<Home>{home}</Home>*/}
   </>)
 }
 
 
 export default Index
 
+/*
 export async function getStaticProps() {
   const res: Response = await fetch("https://nestradio.herokuapp.com" + '/home/category/home')
   console.log(res)
@@ -22,3 +27,4 @@ export async function getStaticProps() {
     },
   }
 };
+*/
