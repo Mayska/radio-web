@@ -7,7 +7,7 @@ function Index(props: any) {
   console.log(props.home)
   return (<>
     <h1>RERERERERRE</h1>
-    {/*<Home>{home}</Home>*/}
+    <Home>{props}</Home>
   </>)
 }
 
