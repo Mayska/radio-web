@@ -8,7 +8,7 @@ function Index(props: MyHome[]) {
     </>)
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
     const res: Response = await fetch(process.env.URL_API + '/home/category/tv')
     const home: MyHome[] = await res.json()
     return {
