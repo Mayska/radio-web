@@ -1,4 +1,3 @@
-import axios from "axios"
 import Home from "../components/home"
 import { MyHome } from '../interfaces/myhome'
 
