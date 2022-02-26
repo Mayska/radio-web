@@ -76,7 +76,13 @@ function TablesHome({ children }: any) {
                                 <a className="btn btn-warning" aria-current="page">Modifier</a>
                             </Link>
                                 <span> | </span>
-                                <button className="btn btn-danger" aria-current="page" onClick={() => deleteItems(id)} >Supprimer</button>
+                                {/*<button className="btn btn-danger" aria-current="page" onClick={() => deleteItems(id)} >Supprimer</button>*/}
+                                <Link href={{
+                                    pathname: '/home/admin/delete/[id]',
+                                    query: { id: id },
+                                }}>
+                                    <a className="btn btn-danger" aria-current="page">Supprimer</a>
+                                </Link>
                             </td>
                         </tr>
                     </>)

@@ -12,7 +12,7 @@ function Index(props: any) {
 }
 
 export async function getServerSideProps() {
-    const resHome: Response = await fetch("https://nestradio.herokuapp.com" + '/home')
+    const resHome: Response = await fetch(process.env.URL_API + '/home')
     const home: MyHome[] = await resHome.json()
     return {
         props: {
