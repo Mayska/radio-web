@@ -21,6 +21,9 @@ function FormsRadio({ children }: any) {
             await fetch(URL_PATCH, {
                 body: JSON.stringify({
                     name: event.target.name.value,
+                    url_flux: event.target.url_flux.value,
+                    url_flux_secondary: event.target.url_flux_secondary.value,
+                    url_img: event.target.url_img.value,
                 }),
                 headers: {
                     'Content-Type': 'application/json'
@@ -31,6 +34,9 @@ function FormsRadio({ children }: any) {
             await fetch(URL_API + "/radios", {
                 body: JSON.stringify({
                     name: event.target.name.value,
+                    url_flux: event.target.url_flux.value,
+                    url_flux_secondary: event.target.url_flux_secondary.value,
+                    url_img: event.target.url_img.value,
                 }),
                 headers: {
                     'Content-Type': 'application/json'
