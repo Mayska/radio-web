@@ -39,6 +39,11 @@ function Navbar() {
                                 <a className="nav-link active" aria-current="page">Admin</a>
                             </Link>
                         </li>
+                        <li className="nav-item">
+                            <Link href='/divers'>
+                                <a className="nav-link active" aria-current="page">Autres projets</a>
+                            </Link>
+                        </li>
                     </ul>
                 </div>
             </div>
