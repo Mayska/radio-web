@@ -21,6 +21,15 @@ function Navbar() {
                             </Link>
                         </li>
                         <li className="nav-item">
+                            <Link href="/home/favoris">
+                                <a className="nav-link active" aria-current="page" href="#">Favoris</a>
+                            </Link>
+                        </li>                        <li className="nav-item">
+                            <Link href="/home/utilitaires">
+                                <a className="nav-link active" aria-current="page" href="#">Utilitaires</a>
+                            </Link>
+                        </li>
+                        <li className="nav-item">
                             <Link href='/radios'>
                                 <a className="nav-link active" aria-current="page">Radios</a>
                             </Link>
