@@ -28,6 +28,12 @@ function Index() {
             url: "https://nestradio.herokuapp.com/",
             techno: "nest.js",
         },
+        {
+            name: "My movies",
+            description: "Permet de créer des liste de film",
+            url: "https://my-movies-mu.vercel.app/",
+            techno: "next.js",
+        },
     ]
     return (<>
         <br />
